@@ -32,4 +32,8 @@ export class MainPageComponent {
   cambiarNombre(event: any) {
     console.log(event.target.value)
   }
+
+  agregarNuevoPersonaje(Personaje: Personaje) {
+    this.personajes.push(Personaje)
+  }
 }
