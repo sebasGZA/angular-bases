@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 
 @Component({
@@ -27,6 +28,15 @@ export class MainPageComponent {
   nuevo: Personaje = {
     nombre: 'Trucks',
     poder: 14000
+  }
+
+  /**
+   *
+   */
+  //Injeccion de dependencias
+  constructor(private dbzSvc: DbzService) {
+
+
   }
 
   cambiarNombre(event: any) {

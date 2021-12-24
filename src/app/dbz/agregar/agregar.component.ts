@@ -25,7 +25,8 @@ export class AgregarComponent {
       return
     }
 
-    this,this.onNuevoPersonaje.emit(this.nuevo)
+    // debugger
+    this.onNuevoPersonaje.emit(this.nuevo)
     console.log(this.nuevo)
     this.nuevo = {
       nombre: '',
