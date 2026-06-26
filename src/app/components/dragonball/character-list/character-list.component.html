@@ -1,0 +1,16 @@
+<h3>Strongest List</h3>
+<ul>
+    @for(character of characters(); track character.id; let idx = $index){
+    @if(character.power > 1000){
+    <li id="{{character.id}}">
+        <span>{{idx + 1}} - {{character.name}}</span>
+        <!-- <strong [ngClass]="powerClasses" [class.text-info]="character.power <= 9000">
+                            ({{character.power}})
+                        </strong> -->
+        <strong [class.text-danger]="character.power > 9000" [class.text-info]="character.power <= 9000">
+            ({{character.power}})
+        </strong>
+    </li>
+    }
+    }
+</ul>
