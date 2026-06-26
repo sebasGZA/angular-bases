@@ -5,7 +5,7 @@ import { Component, signal } from "@angular/core";
     styles: `
     button {
         padding: 5px;
-        nargin: 5px 10px;
+        margin: 5px 10px;
         width: 75px;
     }`
 })
