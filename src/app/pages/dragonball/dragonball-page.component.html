@@ -12,18 +12,20 @@
     </div>
 
     <div class="col-12 col-sm-6">
-        <h3>List</h3>
+        <h3>Strongest List</h3>
         <ul>
             @for(character of characters(); track character.id; let idx = $index){
-            <li id="{{character.id}}">
-                <span>{{idx + 1}} - {{character.name}}</span>
-                <!-- <strong [ngClass]="powerClasses" [class.text-info]="character.power <= 9000">
-                    ({{character.power}})
-                </strong> -->
-                <strong [class.text-danger]="character.power > 9000" [class.text-info]="character.power <= 9000">
-                    ({{character.power}})
-                </strong>
-            </li>
+                @if(character.power > 1000){
+                    <li id="{{character.id}}">
+                        <span>{{idx + 1}} - {{character.name}}</span>
+                        <!-- <strong [ngClass]="powerClasses" [class.text-info]="character.power <= 9000">
+                            ({{character.power}})
+                        </strong> -->
+                        <strong [class.text-danger]="character.power > 9000" [class.text-info]="character.power <= 9000">
+                            ({{character.power}})
+                        </strong>
+                    </li>
+                }
             }
         </ul>
     </div>

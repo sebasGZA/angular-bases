@@ -29,6 +29,11 @@ export class DragonballComponent {
       name: 'Trunks',
       power: 8000
     },
+        {
+      id: 4,
+      name: 'Yamcha',
+      power: 500
+    },
   ]);
 
   powerClasses = computed(() => {
