@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { Character } from '../app/interfaces/character.interface';
 
 @Injectable({ providedIn: 'root' })
@@ -16,8 +16,13 @@ export class DragonBallService {
         },
     ]);
 
+    saveToLocalStorage = effect(() => {
+        localStorage.setItem('characters', JSON.stringify(this.characters()))
+    })
+
     addCharacter(character: Character) {
         this.characters.update(list => [...list, character])
+        localStorage.setItem('characters', JSON.stringify(this.characters()))
     }
 
 }
